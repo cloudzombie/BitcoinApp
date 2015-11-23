@@ -2,7 +2,7 @@
 
   <div class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="/">BitChange</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
@@ -12,11 +12,12 @@
       </div>
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link</a></li>
+              <li class="active"><a href="#">About</a></li>
           </ul>
           {{#if currentUser}}
           <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link</a></li>
+
+              <li class="active"><a href="{{pathFor route='profile.show'}}">{{username}}</a></li>
           </ul>
           {{/if}}
 

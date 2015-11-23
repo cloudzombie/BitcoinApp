@@ -1,14 +1,14 @@
 
-var adkjlf;
 
-/*
+
 Accounts.onCreateUser(function (options, user) {
-  if(options.profile) {
-    user.profile = options.profile;
-
-  }else{
-    user.profile = {};
+  var keyPair = bitcoinjs.ECKey.makeRandom();
+  options.profile.bitcoinAddress = keyPair.pub.getAddress().toString()
+  if(options.profile){
+    user.profile = options.profile
 
   }
-  console.log("CREATED USER");
-});*/
+  Router.go('/profile' + user.username);
+  console.log("CREATED USER", user);
+  return user;
+});

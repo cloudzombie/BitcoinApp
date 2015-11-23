@@ -1,5 +1,27 @@
 <template name="profileTemplate">
   <div class="container">
-    {{> React component=ProfileView userId=_id}}
+    <div>
+      <div class="row">
+        <p class="text-center">Welcome {{username}}</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6-col-md-offset-3">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="1">1</td>
+                <td>{{bitcoinAddress}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
   </div>
+</div>
 </template>
