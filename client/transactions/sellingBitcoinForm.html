@@ -1,0 +1,16 @@
+<template name="sellingBitcoinForm">
+
+    <form>
+      <div class="form-group">
+        <label for="amountBTCSell">BTC</label>
+        <input type="number" id=amountBTCSell placeholder={{amountBTCSell}}>
+      </div>
+      <div class="form-group">
+        <label for="amountCurrencySell">US$</label>
+        <input type="number" id=amountCurrencySell placeholder={{amountCurrencySell}}>
+      </div>
+      <p>Total: {{TotalBTC}}</p>
+      <button type="submit" name="sellOrderSubmit" class="btn btn-default">Sell</button>
+    </form>
+
+</template>

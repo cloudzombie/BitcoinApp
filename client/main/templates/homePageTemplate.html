@@ -1,10 +1,29 @@
 <template name="homePageTemplate">
 
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+  <div class="jumbotron" style="text-align:center">
+    <div class="container" style="">
+      <h1>Welcome to Bitchange</h1>
+      <p>A safe and secure place to buy and sell bitcoin</p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-md-4" style="border:2px solid #777">
+      Buy Bitcoin
+      {{> buyingBitcoinForm}}
+    </div>
+    <div class="col-xs-6 col-md-4" style="border:2px solid #777">
+      Sell Bitcoin
+      {{> sellingBitcoinForm}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-md-4" style="border:2px solid #777">
+      Buy Orders
+    </div>
+    <div class="col-xs-6 col-md-4" style="border:2px solid #777">
+      Sell Orders
+    </div>
+  </div>
+
 </template>
