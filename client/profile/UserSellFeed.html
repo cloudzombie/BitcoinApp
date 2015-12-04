@@ -1,0 +1,18 @@
+<template name="UserSellOrderFeed">
+  <ul class="list-group" style="text-align:center">
+      Sell Orders
+      {{#each userSellOrders}}
+        {{> userSellOrder}}
+      {{/each}}
+  </ul>
+
+</template>
+
+
+<template name="userSellOrder">
+  <li class="list-group-item">
+    BTC: {{BTC}}
+    At: {{price}}
+    Total: {{USD}}
+  </li>
+</template>

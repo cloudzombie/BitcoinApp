@@ -4,5 +4,9 @@ Template.profileTemplate.helpers({
   },
   bitcoinAddress: function(){
     return Meteor.user().profile.bitcoinAddress;
+  },
+  wallet: function(){
+    return Meteor.user().profile.wallet;
   }
+
 });

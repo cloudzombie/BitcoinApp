@@ -1,0 +1,29 @@
+<template name="homePageTemplate">
+
+  <div class="jumbotron center-block" style="text-align:center">
+    <div class="container" style="">
+      <h3>Welcome to Bitchange</h3>
+      <p>A safe and secure place to buy and sell bitcoin</p>
+    </div>
+  </div>
+
+  <div class="container center-block" style="width:75%">
+    <div class="row" style="padding:5px">
+      <div class="col-xs-6 col-md-4" style="">
+        {{> buyingBitcoinForm}}
+      </div>
+      <div class="col-xs-6 col-md-4" style="">
+        {{> sellingBitcoinForm}}
+      </div>
+    </div>
+    <div class="row" style="padding:5px">
+      <div class="col-xs-6 col-md-4" style="">
+        {{> BuyOrderFeed}}
+      </div>
+      <div class="col-xs-6 col-md-4" style="">
+        {{> SellOrderFeed}}
+      </div>
+    </div>
+  </div>
+
+</template>

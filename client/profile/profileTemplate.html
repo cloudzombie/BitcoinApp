@@ -9,19 +9,32 @@
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th>#</th>
                 <th>Address</th>
+                <th>BTC</th>
+                <th>USD</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td rowspan="1">1</td>
                 <td>{{bitcoinAddress}}</td>
+                <td>{{wallet.BTC}}</td>
+                <td>{{wallet.USD}}$</td>
               </tr>
             </tbody>
           </table>
         </div>
-    </div>
+      </div>
+      <div class="row">
+        <p class="text-center">My Orders</p>
+        <div class="col-xs-6 col-md-6" style="border:2px solid #777">
+          {{> UserSellOrderFeed}}
+        </div>
+        <div class="col-xs-6 col-md-6" style="border:2px solid #777">
+          {{> UserBuyOrderFeed}}
+        </div>
+
+      </div>
+
   </div>
 </div>
 </template>

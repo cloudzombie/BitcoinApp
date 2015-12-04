@@ -1,0 +1,21 @@
+<template name="SellOrderFeed">
+  <div class="panel panel-default">
+    <div class="panel-heading text-align:center">Sell Orders </div>
+      <ul class="list-group">
+
+          {{#each sellOrders}}
+            {{> sellOrder}}
+          {{/each}}
+      </ul>
+  </div>
+
+</template>
+
+
+<template name="sellOrder">
+  <li class="list-group-item">
+    BTC: {{BTC}}
+    At: {{price}}
+    Total: {{USD}}
+  </li>
+</template>

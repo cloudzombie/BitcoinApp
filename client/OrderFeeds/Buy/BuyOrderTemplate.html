@@ -1,0 +1,21 @@
+<template name="BuyOrderFeed">
+  <div class="panel panel-default">
+    <div class="panel-heading text-align:center">Buy Orders </div>
+      <ul class="list-group">
+
+          {{#each buyOrders}}
+            {{> buyOrder}}
+          {{/each}}
+      </ul>
+  </div>
+
+</template>
+
+
+<template name="buyOrder">
+  <li class="list-group-item">
+    BTC: {{BTC}}
+    At: {{price}}
+    Total: {{USD}}
+  </li>
+</template>
