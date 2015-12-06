@@ -1,10 +1,12 @@
 <template name="UserSellOrderFeed">
-  <ul class="list-group" style="text-align:center">
-      Sell Orders
-      {{#each userSellOrders}}
-        {{> userSellOrder}}
-      {{/each}}
-  </ul>
+  <div class="panel panel-default">
+    <div class="panel-heading text-align:center">Sell Orders </div>
+      <ul class="list-group" style="text-align:center">
+          {{#each userSellOrders}}
+            {{> userSellOrder}}
+          {{/each}}
+      </ul>
+  </div>
 
 </template>
 

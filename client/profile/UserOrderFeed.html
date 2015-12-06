@@ -1,10 +1,12 @@
 <template name="UserBuyOrderFeed">
-  <ul class="list-group" style="text-align:center">
-      Buy Orders
-      {{#each userBuyOrders}}
-        {{> userBuyOrder}}
-      {{/each}}
-  </ul>
+  <div class="panel panel-default">
+    <div class="panel-heading text-align:center">Buy Orders </div>
+      <ul class="list-group" style="text-align:center">
+          {{#each userBuyOrders}}
+            {{> userBuyOrder}}
+          {{/each}}
+      </ul>
+  </div>
 
 </template>
 

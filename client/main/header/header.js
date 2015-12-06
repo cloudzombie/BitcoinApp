@@ -2,12 +2,22 @@ Template.headerTemplate.events({
 
 });
 
+Template.headerTemplate.colorOnChange = function() {
+
+}
+
 Template.headerTemplate.helpers({
 
   username: function(){
     return Meteor.user().username
   },
-  wallet: function(){
-    return Meteor.user().profile.wallet;
+  walletBTC: function(){
+    $("#walletBTC").effect('highlight');
+
+    return Meteor.user().profile.wallet.BTC;
+  },
+  walletUSD: function(){
+    $("#walletUSD").effect('highlight');
+    return Meteor.user().profile.wallet.USD;
   }
 });

@@ -25,3 +25,5 @@ accounts-password
 ca333:bitcoinjs
 coffeescript
 cosmos:browserify
+themeteorchef:jquery-validation
+mizzao:jquery-ui

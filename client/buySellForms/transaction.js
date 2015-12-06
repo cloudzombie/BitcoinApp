@@ -1,3 +1,65 @@
+
+
+Template.buyingBitcoinForm.onRendered(function(){
+  $.validator.addMethod('minMoney', function(param) {
+    return param > 0 ? true : false
+  });
+  $("#buyingBitcoinForm").validate({
+    rules:{
+      amountBTC: {
+        required: true,
+        minMoney: true
+      },
+      amountCurrency: {
+        required: true,
+        minMoney: true
+      }
+    },
+    messages: {
+      amountBTC: {
+        required: "Must enter an amount for BTC",
+        minMoney: "Must enter an amount greater than 0"
+      },
+      amountCurrency: {
+        required: "Must enter an amount for BTC",
+        minMoney: "Must enter an amount greater than 0"
+      }
+
+    }
+  });
+});
+
+Template.sellingBitcoinForm.onRendered(function(){
+  $.validator.addMethod('minMoneySell', function(param) {
+    return param > 0 ? true : false
+  });
+  $("#sellingBitcoinForm").validate({
+    rules:{
+      amountBTCSell: {
+        required: true,
+        minMoneySell: true
+      },
+      amountCurrencySell: {
+        required: true,
+        minMoneySell: true
+      }
+    },
+    messages: {
+      amountBTCSell: {
+        required: "Must enter an amount for BTC",
+        minMoney: "Must enter an amount greater than 0"
+      },
+      amountCurrencySell: {
+        required: "Must enter an amount for BTC",
+        minMoney: "Must enter an amount greater than 0"
+      }
+
+    }
+  });
+});
+
+
+
 Template.buyingBitcoinForm.helpers({
 
   Totalcurrency:function(){
@@ -68,9 +130,9 @@ Template.buyingBitcoinForm.events({
         var currentTime = Date.now();
 
         BuyOrderCollection.insert({username:username,
-          BTC:Number(BTCtoBuy),
-          price:Number(currBuy),
-          USD: Number(totBuy),
+          BTC:parseFloat(BTCtoBuy),
+          price:parseFloat(currBuy),
+          USD: parseFloat(totBuy),
           time:currentTime});
         var newUSD = currUSD - currBuy;
         userWallet.USD = newUSD;
@@ -120,17 +182,19 @@ Template.sellingBitcoinForm.events({
       if(BTCtoSell <= currBTC){
         var currentTime = Date.now();
         SellOrderCollection.insert({username:username,
-          BTC:Number(BTCtoSell),
-          price:Number(currSell),
-          USD: Number(totSell),
+          BTC:parseFloat(BTCtoSell),
+          price:parseFloat(currSell),
+          USD: parseFloat(totSell),
           time: currentTime});
 
         //TODO only update user wallet and post new order once everything
         // has been checked and is valid
         var newBTC = currBTC - BTCtoSell;
         userWallet.BTC = newBTC;
-        Meteor.call('matchOrders', function(error,result){});
+
         Meteor.users.update({_id:user._id}, {$set:{"profile.wallet":userWallet}});
+
+        Meteor.call('matchOrders', function(error,result){});
       }else{
         alert("you dont have sufficient Bitcoins :(");
       }
