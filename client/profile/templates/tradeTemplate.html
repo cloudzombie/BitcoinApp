@@ -1,23 +1,28 @@
 <template name="TradeTemplate">
   <div class="container">
     <div>
-      <div class="row">
+      <div class="row" style="padding:5px">
         <p class="text-center">Welcome {{currentUser.username}}</p>
       </div>
       <div class="row" style="padding:5px">
+        <div class="col-xs-6 col-md-4" style="">
+          {{> allInOneBitcoinForm}}
+        </div>
+      </div>
+    <!--  <div class="row" style="padding:5px">
         <div class="col-xs-6 col-md-4" style="">
           {{> buyingBitcoinForm}}
         </div>
         <div class="col-xs-6 col-md-4" style="">
           {{> sellingBitcoinForm}}
         </div>
-      </div>
-      <div class="row">
+      </div>-->
+      <div class="row" style="padding:5px">
         <p class="text-center">My Orders</p>
-        <div class="col-xs-6 col-md-6" style="">
+        <div class="col-xs-6 col-md-4" style="">
           {{> UserSellOrderFeed}}
         </div>
-        <div class="col-xs-6 col-md-6" style="">
+        <div class="col-xs-6 col-md-4" style="">
           {{> UserBuyOrderFeed}}
         </div>
 

@@ -1,0 +1,38 @@
+<template name="HistoryFeedTemplate">
+
+        <div class="row">
+          <div class="">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Buyer</th>
+                  <th>Seller</th>
+                  <th>BTC</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                  <th>Time </th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each historyOrders}}
+
+                  {{> history}}
+
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+</template>
+
+
+<template name="history">
+  <tr>
+    <td>{{buyer}}</td>
+    <td>{{seller}}</td>
+    <td>{{BTC}}</td>
+    <td>{{Price}}</td>
+    <td>{{Total}}</td>
+    <td>{{timeFormatted}}</td>
+  </tr>
+</template>

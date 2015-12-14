@@ -27,3 +27,6 @@ coffeescript
 cosmos:browserify
 themeteorchef:jquery-validation
 mizzao:jquery-ui
+mrt:bootstrap-select
+momentjs:moment
+yogiben:autoform-modals

@@ -6,6 +6,16 @@ Template.UserBuyOrderFeed.helpers({
   }
 });
 
+Template.userBuyOrder.events({
+  'click #deleteOrder': function(evt,template){
+    evt.preventDefault();
+    console.log(this);
+    Meteor.call('deleteBuyOrder',this._id,function(error,result){
+      console.log('deletOrder called');
+    });
+  }
+});
+
 Template.UserSellOrderFeed.helpers({
 
   userSellOrders: function(){

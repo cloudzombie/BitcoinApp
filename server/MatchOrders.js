@@ -13,6 +13,7 @@ Meteor.methods({
 
   findMatch: function(newBuyOrder){
 
+    //var newBuyOrder = BuyOrderCollection.find({},{sort:{time:1}}).fetch()[0];
     // get newest BuyOrderCollection
     console.log(newBuyOrder);
     // TODO if someone post a really low bid then it will stay in front
@@ -66,19 +67,35 @@ Meteor.methods({
             BuyOrderCollection.remove({_id:CurrentBuyOrder._id});
 
           }
-
+          // BOTH BUYER and SELLER use the same following variables
+          //var amountBought - already defined above
+          var price = currentMatch.price;
+          var updatedUSD = amountBought*price;
           // UPDATE THE USERS
           // UPDATE BUYER
           console.log("---------------------------CurrentBuyer:" + CurrentBuyOrder.username);
-          Meteor.users.update({username:CurrentBuyOrder.username},{$inc:{"profile.wallet.BTC":amountBought}});
+          // Increase buyer wallet.BTC by amount of BTC bought
+          // Decrease buyer wallet.Currency by how much the BTC cost
+          Meteor.users.update({username:CurrentBuyOrder.username},{$inc:{"profile.wallet.BTC":amountBought,
+          "profile.wallet.USD":-updatedUSD}});
 
           //UPDATE SELLER
           console.log("---------------------------CurrentSeller:" + currentMatch.username);
-          var price = currentMatch.price;
-          var updatedUSD = amountBought*price
-          console.log("update SELLER");
-          console.log(updatedUSD)
-          Meteor.users.update({username:currentMatch.username},{$inc:{"profile.wallet.USD":updatedUSD}});
+          // Decrease seller wallet.BTC by amount of BTC sold
+          // Increase seller wallet.Currency by how much BTC sold * price
+
+          Meteor.users.update({username:currentMatch.username},{$inc:{"profile.wallet.USD":updatedUSD,
+          "profile.wallet.BTC":-amountBought}});
+
+          // A successful transaction has occured so now we can add the HistoryOrderCollection
+          var buyer = CurrentBuyOrder.username;
+          var seller = currentMatch.username;
+          var amountBought = amountBought;
+          var price = price;
+          var time = Date.now();
+
+          var timeFormatted = moment(time).format('MMMM Do YYYY, h:mm:ss a');
+          HistoryOrderCollection.insert({"buyer":buyer,"seller":seller,"BTC":amountBought,"Price":price,"Total":updatedUSD,"timeFormatted":timeFormatted,"time":time});
 
 
         }else{
