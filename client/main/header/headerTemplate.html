@@ -16,7 +16,7 @@
           </ul>
           {{#if currentUser}}
           <ul class="nav navbar-nav">
-            <li><a href="{{pathFor route='profile.show'}}">{{username}} Account</a></li>
+            <li><a href="{{pathFor route='profile.show'}}">{{currentUser.username}} Account</a></li>
             <li id="walletBTC"><a>BTC: {{walletBTC}}</a></li>
             <li id="walletUSD"><a>USD: {{walletUSD}} $</a></li>
           </ul>
