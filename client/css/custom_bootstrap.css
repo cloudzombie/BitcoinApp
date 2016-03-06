@@ -1,9 +1,227 @@
+.col-md-6 {
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+  height: 100%
+}
+
+.col-sm-6 {
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+  height: 100%
+
+}
+
+.row_front {
+  padding-bottom: 150px;
+  margin-bottom: -150px;
+  border-bottom:medium solid #eee;
+}
+
+
+.wrap_front_row1{
+  background-color: rgba(180,180,180,0.9);
+}
+
+
+
 .row_about {
-  border-bottom: medium solid #eee;
   margin: 80px 0px 20px;
 }
+
+
 
 .row_about_img {
   width: 50%;
   height: 50%;
+}
+
+.front_row_img {
+  width: 100px;
+  height: 100px;
+}
+
+
+.secure {
+  border-right: medium solid #eee;
+  height: 100%;
+  vertical-align: top;
+}
+
+.col-sm-6 .secure{
+  border-bottom: medium solid #eee;
+}
+
+.secure h2 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 25px;
+    color: #1b3a51;
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.secure h2::before {
+  background-image: url("img/logo3.png");
+}
+
+.row_about .secure p {
+    font-size: 14px;
+    line-height: 21px;
+    transition: all .3s ease;
+    text-align: center;
+    width: 91%;
+    margin: 0 auto
+}
+
+.row_about .fast h2::before {
+  background-image: url("img/exchange.png");
+  width: 80px;
+  height: 80px;
+}
+
+.fast {
+  height: 100%;
+  vertical-align: top;
+}
+
+.fast h2 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 25px;
+    color: #1b3a51;
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.row_about .fast p {
+    font-size: 14px;
+    line-height: 21px;
+    transition: all .3s ease;
+    text-align: center;
+    width: 91%;
+    margin: 0 auto
+}
+
+.trading {
+  border-right: medium solid #eee;
+  height: 100%;
+  vertical-align: top;
+}
+
+.col-sm-6 .trading{
+  border-bottom: medium solid #eee;
+}
+
+.trading h2 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 25px;
+    color: #1b3a51;
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.trading h2::before {
+  background-image: url("img/world2.png");
+}
+
+.row_about .trading p {
+    font-size: 14px;
+    line-height: 21px;
+    transition: all .3s ease;
+    text-align: center;
+    width: 91%;
+    margin: 0 auto
+}
+
+
+.row_about .cheap h2::before {
+  background-image: url("img/bitcurrency.png");
+  width: 60px;
+  height: 60px;
+}
+
+.cheap {
+  height: 100%;
+  vertical-align: top;
+}
+
+.cheap h2 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 25px;
+    color: #1b3a51;
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.row_about .cheap p {
+    font-size: 14px;
+    line-height: 21px;
+    transition: all .3s ease;
+    text-align: center;
+    width: 91%;
+    margin: 0 auto
+}
+
+.row_about h2::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  left:50%;
+  top: -60px;
+  height: 60px;
+  width: 60px;
+  margin-left: -30px;
+
+}
+
+
+
+.row_centered {
+  text-align: center;
+}
+
+
+.col_centered{
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+
+  text-align: left;
+
+  margin-right: -4px;
+}
+
+.header_logo {
+  height: 40px;
+}
+
+.navbar_brand_custon {
+  float: left;
+  height: 50px;
+  padding: 5px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.OrderForm {
+  width: 75%;
 }
