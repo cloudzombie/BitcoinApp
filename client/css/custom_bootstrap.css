@@ -11,6 +11,10 @@
 
 }
 
+.col-sm-6 .footer{
+  max-height: 50px;
+}
+
 .row_front {
   padding-bottom: 150px;
   margin-bottom: -150px;

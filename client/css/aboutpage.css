@@ -1,0 +1,29 @@
+.about_firstrow {
+  background-color: #2a2730;
+  height: 250px;
+}
+
+.about_firstrow h1{
+  color: white;
+}
+
+.about_firstrow h3{
+  color: white;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.row_even {
+  background-color: #f8f8f8;
+}
+
+.filler_row {
+  height: 300px;
+}
+
+.one_page_form {
+  margin-top: 20px;
+
+}

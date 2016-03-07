@@ -1,22 +1,33 @@
 <template name="aboutTemplate">
-  <div class="container">
-      <div class="row text-center">
-        <h1>Interested in exchanging cash for bitcoin?</h1>
-        <h3>This is how it works</h3>
-      </div>
-      <div class="row row_about">
-          <div class="col-md-6 col_centered">
-              <img class="row_about_img" src="img/man2.png">
-          </div>
-          <div class="col-md-6 col_centered">
-              <h4> First Step </h4>
-              <p class="">
-                  Sign up using our register form.
-              </p>
-              <button class="btn btn-primary">Sign up
-              </button>
-          </div>
-      </div>
+  <div class="about_firstrow">
+    <div class="container">
+        <div class="row text-center">
+          <h1>Interested in exchanging cash for bitcoin?</h1>
+          <h3>This is how it works</h3>
+        </div>
+    </div>
+  </div>
+  <div class="row_odd">
+    <div class="container">
+        <div class="row row_about">
+            <div class="col-md-6 col_centered">
+                <img class="row_about_img" src="img/man2.png">
+            </div>
+            <div class="col-md-6 col_centered">
+                <h4> First Step </h4>
+                <p class="">
+                    Sign up using our register form.
+                </p>
+                {{#linkTo route="signup"}}
+                <button class="btn btn-primary"> Register</button>
+                {{/linkTo}}
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="row_even">
+    <div class="container">
+
       <div class="row row_about">
           <div class="col-md-6 col_centered">
               <h4> Upload some funds </h4>
@@ -31,6 +42,9 @@
           </div>
 
       </div>
+    </div>
+  </div>
+  <div class="container">
       <div class="row row_about">
           <div class="col-md-6 col_centered">
               <img class="row_about_img" src="img/exchange.png">
@@ -46,6 +60,9 @@
           </div>
 
       </div>
+  </div>
+  <div class="row_even">
+    <div class="container">
       <div class="row row_about">
           <div class="col-md-6 col_centered">
               <h4> Transactions </h4>
@@ -60,6 +77,9 @@
           </div>
 
       </div>
+    </div>
+  </div>
+  <div class="container">
       <div class="row row_about">
           <div class="col-md-6 col_centered">
               <img class="row_about_img" src="img/handcash.png">
@@ -73,6 +93,9 @@
               <button class="btn btn-primary">Learn more</button>
           </div>
       </div>
+  </div>
+  <div class="row_even">
+    <div class="container">
       <div class="row row_about">
           <div class="col-md-6 col_centered">
               <h4> Ready to get started? </h4>
@@ -86,4 +109,5 @@
           </div>
       </div>
   </div>
+</div>
 </template>
