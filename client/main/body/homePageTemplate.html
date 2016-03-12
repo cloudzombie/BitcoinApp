@@ -1,19 +1,19 @@
 <template name="homePageTemplate">
 
-  <div class="wrap_front_row1">
-    <div class="container" style="">
+  <div class="custom_footer_darkblue">
+    <div class="container " style="">
       <div class="row row_about">
 
           <div class="col-md-6 col_centered">
             <div class="row">
               <div class="OrderForm">
-                {{> allInOneBitcoinForm}}
+                {{> StatisticsTemplate}}
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col_centered">
-            <h2>Bitchange is a fast and secure way to exchange bitcoin</h2>
+            <h2 style="margin-top:0px;">Bitchange is a fast and secure way to exchange bitcoin</h2>
             <h3>To get started open a free account or click the about button below
               to learn more
             </h3>
@@ -24,36 +24,40 @@
       </div>
     </div>
   </div>
-    <div class="container">
-      <div class="row row_about row_front">
+  <div class="Statistics_template2">
+    {{> StatisticsTemplate2}}
+  </div>
 
-        <div class="col-sm-6 secure">
-          <h2> Bitchange is safe and secure </h2>
-          <p> We ensure that you trade safely and anonymously </P>
-        </div>
+  <div class="container">
+    <div class="row row_about row_front">
 
-        <div class="col-sm-6 fast">
-          <h2> We making trading quick and easy </h2>
-          <p> That means we get you your money quickly and when you want it</p>
-        </div>
+      <div class="col-sm-6 secure">
+        <h2> Bitchange is safe and secure </h2>
+        <p> We ensure that you trade safely and anonymously </P>
       </div>
 
-      <div class="row row_about">
-
-        <div class="col-sm-6 trading" style="margin-bottom:20px;">
-          <h2> Bitcoin Trading </h2>
-          <p> New to trading with bitcoin? We will walk you through each step of
-          the process. </P>
-        </div>
-
-        <div class="col-sm-6 cheap">
-          <h2> Cheap </h2>
-          <p> You are not going to find better value anywhere else. Check out our
-            pricing. Once you get started your first 20
-          trades are free. </p>
-        </div>
-
+      <div class="col-sm-6 fast">
+        <h2> We making trading quick and easy </h2>
+        <p> That means we get you your money quickly and when you want it</p>
       </div>
     </div>
+
+    <div class="row row_about">
+
+      <div class="col-sm-6 trading" style="margin-bottom:20px;">
+        <h2> Bitcoin Trading </h2>
+        <p> New to trading with bitcoin? We will walk you through each step of
+        the process. </P>
+      </div>
+
+      <div class="col-sm-6 cheap">
+        <h2> Cheap </h2>
+        <p> You are not going to find better value anywhere else. Check out our
+          pricing. Once you get started your first 20
+        trades are free. </p>
+      </div>
+
+    </div>
+  </div>
 
 </template>

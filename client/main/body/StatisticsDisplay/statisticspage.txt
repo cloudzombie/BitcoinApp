@@ -1,0 +1,7 @@
+List of statistics to use
+
+1.) Latest Sell price
+2.) Amount sold
+3.) Amount bought
+4.) Total trades
+5.) Global trade price. 

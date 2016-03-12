@@ -1,0 +1,42 @@
+.statistics_template p,h1,h2,h3{
+  color: white;
+}
+
+.statistics_template p {
+  font-size: 20px;
+}
+
+.statistics_template .row img {
+  height: 75px;
+  width: 75px;
+  float: left;
+}
+
+.statistics_template .row div {
+  text-align: center;
+  display: inline-block;
+  padding: 5px 5px 5px 5px;
+}
+
+
+.statistics_template .row div h3 {
+  vertical-align: top;
+  margin-top: 0px;
+}
+
+.Statistics_template2 {
+  min-height: 250px;
+}
+
+.Statistics_template2 .row_statistics_1 {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.Statistics_template2 .row_statistics_1 h2,p {
+  color: #1b3a51;
+}
+
+.Statistics_template2 .row_statistics_1 p {
+  font-size: 20px;
+}

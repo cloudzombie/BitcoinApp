@@ -22,7 +22,7 @@
 }
 
 
-.wrap_front_row1{
+.wrap_front_row1 {
   background-color: rgba(180,180,180,0.9);
 }
 
@@ -30,6 +30,7 @@
 
 .row_about {
   margin: 80px 0px 20px;
+  margin-bottom: 50px;
 }
 
 
