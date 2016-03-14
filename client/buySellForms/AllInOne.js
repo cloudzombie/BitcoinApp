@@ -25,6 +25,11 @@ Template.allInOneBitcoinForm.onRendered(function(){
 
     }
   });
+
+
+
+  var current = $("#currency_type").val();
+  Session.set("currency_type",current);
 });
 
 Template.allInOneBitcoinForm.helpers({
@@ -41,6 +46,10 @@ Template.allInOneBitcoinForm.helpers({
   amountCurrency: function(){
     return Session.get('amountCurrency') || 0;
   },
+  currencyType: function () {
+    var current = Session.get("currency_type");
+    return current;
+  }
 
 
 });
@@ -52,6 +61,11 @@ Template.allInOneBitcoinForm.onRendered(function(){
 });
 
 Template.allInOneBitcoinForm.events({
+
+  'change #currency_type': function (event,template) {
+    var current = $("#currency_type").val();
+    Session.set("currency_type",current);
+  },
 
   'input #amountBTC': function(event, template){
       var currentNum = event.currentTarget.value;

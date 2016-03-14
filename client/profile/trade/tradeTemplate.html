@@ -1,0 +1,35 @@
+<template name="TradeTemplate">
+  <div class="profile_wrapper">
+    <div class="container">
+        <div class="row" style="padding:5px">
+          <h1 class="text-center">Start Trading</h1>
+        </div>
+        <div class="row" style="padding:5px">
+          <div class="col-xs-6 col-md-4" style="">
+            {{> allInOneBitcoinForm}}
+          </div>
+          <div class="col-md-8">
+            <h3 class="text-center"></h3>
+            <canvas id="tradeChart" width="400" height="400"></canvas>
+          </div>
+
+        </div>
+        <div class="row" style="padding:5px">
+          <div class="col-xs-3 col-md-3" style="">
+            {{> UserSellOrderFeed}}
+          </div>
+          <div class="col-xs-3 col-md-3" style="">
+            {{> UserBuyOrderFeed}}
+          </div>
+          <div class="col-xs-3 col-md-3">
+            {{> BuyOrderFeed}}
+          </div>
+          <div class="col-xs-3 col-md-3">
+            {{> SellOrderFeed}}
+          </div>
+        </div>
+      </div>
+    <div class="push">
+    </div>
+  </div>
+</template>

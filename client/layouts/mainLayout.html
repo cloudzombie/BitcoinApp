@@ -3,7 +3,8 @@
   <div class="navbar navbar-default custom_navbar1" role="navigation">
       <div class="navbar-header">
           <a class="navbar-brand" style="padding:5px 15px;" href="/">
-            <img class="header_logo" src="img/Bitchange_white2.png">
+            <img class="header_logo" style="float:left" src="/img/Bit_White.png">
+            <img class="header_logo" src="/img/Bitchange_white2.png">
 
           </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,9 +21,8 @@
           </ul>
           {{#if currentUser}}
           <ul class="nav navbar-nav">
-            <li><a href="{{pathFor route='profile.show'}}">{{currentUser.username}} Account</a></li>
-            <li id="walletBTC"><a>BTC: {{currentUser.profile.wallet.BTC}}</a></li>
-            <li id="walletUSD"><a>USD: {{currentUser.profile.wallet.USD}} $</a></li>
+            <li><a href="{{pathFor route='profile' username=currentUser.username}}"> Account</a></li>
+            <li><a href="{{pathFor route='trade' username=currentUser.username}}">Trade </a></li>
           </ul>
           {{/if}}
 
@@ -35,7 +35,7 @@
   {{> yield}}
 
 
-  <footer class="bs-docs-footer custom_footer_darkblue" style="margin-top:0px;" role="contentinfo">
+  <footer class="bs-docs-footer custom_footer_darkblue footer" style="margin-top:0px;" role="contentinfo">
     <div class="container">
       <div class="row statistics_template">
         <p style="display:inline-block;"> Bitchange </p>

@@ -26,8 +26,8 @@
           <label class="col-sm-3 control-label" for="userChoice">Currency</label>
 
             <select id="currency_type" class="col-sm-5 selectpicker">
-              <option>USD</option>
-              <option>CZK</option>
+              <option value="$">USD</option>
+              <option value="K&#269;">CZK</option>
             </select>
 
         </div>
@@ -40,7 +40,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label">Total: </label>
           <div class="col-sm-5">
-            <p class="form-control-static">{{Totalcurrency}}</p>
+            <p class="form-control-static">{{Totalcurrency}} {{currencyType}}</p>
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Trade</button>

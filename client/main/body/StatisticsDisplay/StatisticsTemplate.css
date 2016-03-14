@@ -39,4 +39,6 @@
 
 .Statistics_template2 .row_statistics_1 p {
   font-size: 20px;
+  text-align: left;
+  padding: 15px;
 }
