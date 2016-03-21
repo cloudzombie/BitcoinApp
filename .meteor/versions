@@ -72,6 +72,7 @@ mongo-id@1.0.1
 mongo-livedata@1.0.9
 mpowaga:string-template@0.1.0
 mrt:bootstrap-select@1.5.4
+mrt:flash-messages@1.0.1
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7

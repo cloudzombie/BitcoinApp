@@ -7,21 +7,21 @@
         <div class="panel-heading text-align:center">Register </div>
 
         <div class="panel-body">
-          <form>
+          <form id="createUserForm">
             <div class="form-group">
               <div for="username_input">Username</div>
-              <input type="text" class="form-control" id="username_input" placeholder="username">
+              <input type="text" class="required form-control" id="username_input" placeholder="username">
             </div>
             <div class="form-group">
               <div for="password_input">password</div>
-              <input type="text" class="form-control" id="password_input" placeholder="password">
+              <input type="text" class="required form-control" id="password_input" placeholder="password">
             </div>
             <div class="form-group">
               <div for="password_retry">password</div>
-              <input type="text" class="form-control" id="password_retry" placeholder="password(re-enter)">
+              <input type="text" class="required form-control" id="password_retry" placeholder="password(re-enter)">
             </div>
             <button class="btn btn-primary">Register</button>
-
+            <a class="pull-right" href="/login">Already have an account? </a>
           </form>
         </div>
       </div>

@@ -20,13 +20,7 @@
               </ul>
             </div>
             <div class="row">
-              <h3 class="text-center"> Available Orders </h3>
-              <div class="col-md-6">
-                {{> SellOrderFeed}}
-              </div>
-              <div class="col-md-6">
-                {{> BuyOrderFeed}}
-              </div>
+              <h3 class="text-center">  </h3>
             </div>
 
           <!--  <canvas id="tradeChart" width="400" height="400"></canvas>-->
@@ -36,21 +30,49 @@
 
         </div>
         <div class="row" style="padding:5px">
-          <div class="col-xs-3 col-md-3" style="">
-            {{> UserSellOrderFeed}}
+          <div class="col-md-2">
           </div>
-          <div class="col-xs-3 col-md-3" style="">
-            {{> UserBuyOrderFeed}}
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <h3 class="text-center"> Current orders </h3>
+                  <div class="col-xs-6 col-md-6" style="">
+                    {{> UserSellOrderFeed}}
+                  </div>
+                  <div class="col-xs-6 col-md-6" style="">
+                    {{> UserBuyOrderFeed}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <h3 class="text-center"> Available Orders </h3>
+                  <div class="col-xs-6 col-md-6">
+                    {{> BuyOrderFeed}}
+                  </div>
+                  <div class="col-xs-6 col-md-6">
+                    {{> SellOrderFeed}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div class="col-xs-3 col-md-3">
-            {{> BuyOrderFeed}}
+          <div class="col-md-2">
           </div>
-          <div class="col-xs-3 col-md-3">
-            {{> SellOrderFeed}}
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-8">
+            <h3 class="text-center">Trade History </h3>
+            {{> HistoryFeedTemplate}}
+          </div>
+          <div class="col-md-2">
           </div>
         </div>
       </div>
-    <div class="ush">
-    </div>
+
   </div>
 </template>

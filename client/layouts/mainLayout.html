@@ -23,20 +23,17 @@
           <ul class="nav navbar-nav">
             <li><a href="{{pathFor route='profile' username=currentUser.username}}"> Account</a></li>
             <li><a href="{{pathFor route='trade' username=currentUser.username}}">Trade </a></li>
-            <li><a href="">BTC: {{currentUser.profile.wallet.BTC}}</a></li>
-            <li><a href="">USD: {{currentUser.profile.wallet.USD}}</a></li>
+
           </ul>
           {{/if}}
 
           <ul class="nav navbar-nav navbar-right">
-              {{#if currentUser}}
-                <li><a href="">BTC: {{currentUser.profile.wallet.BTC}}</a></li>
-                <li><a href="">USD: {{currentUser.profile.wallet.USD}}</a></li>
-              {{/if}}
-                <li>{{> loginButtons}}</li>
+              {{> loginButtons}}
           </ul>
       </div>
   </div>
+
+  {{> flashMessages}}
 
   {{> yield}}
 

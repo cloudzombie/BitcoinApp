@@ -1,11 +1,8 @@
-/*.profile_wrapper {
-  min-height: 100%;
-  height: auto;
-  height: 100%;
-  mrgin: 0 auto -155px;
+.profile_wrapper {
+  min-height: 500px;
+
 }
 
 html,body {
   height: 100%;
 }
-*/
