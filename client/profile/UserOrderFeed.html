@@ -1,8 +1,8 @@
 <template name="UserBuyOrderFeed">
   {{> autoformModals}}
   <div class="panel panel-default">
-    <div class="panel-heading text-align:center">Buy Orders </div>
-      <ul class="list-group" style="text-align:center">
+    <div class="panel-heading text-center">My Buy Orders </div>
+      <ul class="list-group" style="text-center">
           {{#each userBuyOrders}}
             {{> userBuyOrder}}
           {{/each}}
@@ -13,7 +13,7 @@
 
 
 <template name="userBuyOrder">
-  <li class="list-group-item">
+  <li class="list-group-item text-center" style="white-space:nowrap">
     BTC: {{BTC}}
     At: {{price}}
     {{#afModal class="btn btn-danger" collection="BuyOrderCollection" operation="remove" doc=_id}}

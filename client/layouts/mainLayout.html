@@ -1,10 +1,10 @@
 <template name="mainLayout">
 
-  <div class="navbar navbar-default custom_navbar1" role="navigation">
+  <div class="navbar navbar-default custom_navbar2" style="" role="navigation">
       <div class="navbar-header">
           <a class="navbar-brand" style="padding:5px 15px;" href="/">
-            <img class="header_logo" style="float:left" src="/img/Bit_White.png">
-            <img class="header_logo" src="/img/Bitchange_white2.png">
+            <img class="header_logo" style="float:left" src="/img/Bitchange.png">
+          <!--  <img class="header_logo" src="/img/Bitchange_white.png"> -->
 
           </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,11 +23,17 @@
           <ul class="nav navbar-nav">
             <li><a href="{{pathFor route='profile' username=currentUser.username}}"> Account</a></li>
             <li><a href="{{pathFor route='trade' username=currentUser.username}}">Trade </a></li>
+            <li><a href="">BTC: {{currentUser.profile.wallet.BTC}}</a></li>
+            <li><a href="">USD: {{currentUser.profile.wallet.USD}}</a></li>
           </ul>
           {{/if}}
 
           <ul class="nav navbar-nav navbar-right">
-              {{> loginButtons}} <!-- here -->
+              {{#if currentUser}}
+                <li><a href="">BTC: {{currentUser.profile.wallet.BTC}}</a></li>
+                <li><a href="">USD: {{currentUser.profile.wallet.USD}}</a></li>
+              {{/if}}
+                <li>{{> loginButtons}}</li>
           </ul>
       </div>
   </div>
@@ -38,13 +44,19 @@
   <footer class="bs-docs-footer custom_footer_darkblue footer" style="margin-top:0px;" role="contentinfo">
     <div class="container">
       <div class="row statistics_template">
-        <p style="display:inline-block;"> Bitchange </p>
-        <ul class="bs-docs-footer-links" style="float:right;width:50%">
-          <li><a href="https://github.com/twbs/bootstrap">Facebook</a></li>
-          <li><a href="https://twitter.com/getbootstrap">Twitter</a></li>
-          <li><a href="#">Email</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <p style="display:inline-block;"> Bitchange </p>
+          </div>
+          <div class="col-md-6" style="float:right">
+            <ul class="bs-docs-footer-links" style="text-center">
+              <li><a href="https://github.com/twbs/bootstrap">Facebook</a></li>
+              <li><a href="https://twitter.com/getbootstrap">Twitter</a></li>
+              <li><a href="#">Email</a></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </footer>

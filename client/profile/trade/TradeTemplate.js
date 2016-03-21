@@ -1,3 +1,15 @@
+Template.TradeTemplate.helpers({
+
+  BTC: function(){
+    return Meteor.user().profile.wallet.BTC || "";
+  },
+  USD: function () {
+    return Meteor.user().profile.wallet.USD || "";
+  }
+});
+
+
+
 Template.TradeTemplate.onRendered(function (){
 
   // code for creating a weekly line chart

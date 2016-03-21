@@ -31,3 +31,5 @@ mrt:bootstrap-select
 momentjs:moment
 yogiben:autoform-modals
 chart:chart
+meteorhacks:aggregate
+okgrow:promise

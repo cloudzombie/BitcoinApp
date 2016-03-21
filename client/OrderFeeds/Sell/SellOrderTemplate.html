@@ -1,6 +1,6 @@
 <template name="SellOrderFeed">
   <div class="panel panel-default">
-    <div class="panel-heading text-align:center">Sell Orders </div>
+    <div class="panel-heading text-center">Sell Orders </div>
       <ul class="list-group">
 
           {{#each sellOrders}}
@@ -13,9 +13,8 @@
 
 
 <template name="sellOrder">
-  <li class="list-group-item">
+  <li class="list-group-item text-center">
     BTC: {{BTC}}
     At: {{price}}
-    Total: {{USD}}
   </li>
 </template>
