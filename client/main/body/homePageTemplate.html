@@ -1,41 +1,18 @@
 <template name="homePageTemplate">
 
-  <div class="custom_footer_darkblue">
-    <div class="container " style="">
-      <div class="row row_about">
-          <div class="col-md-2">
-          </div>
-
-          <div class="col-md-4 col_centered">
-            <div class="row">
-              <div class="OrderForm">
-                {{> allInOneBitcoinForm}}
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col_centered">
-            <h2 style="margin-top:0px;">Bitchange is a fast and secure way to exchange bitcoin</h2>
-            <h3>To get started open a free account or click the about button below
-              to learn more
-            </h3>
-              <button class="btn btn-primary">Sign up</button>
-              <button class="btn btn-info">Learn more</button>
-          </div>
-
-      </div>
-    </div>
-  </div>
   <div class="Statistics_template2">
-    {{> StatisticsTemplate2}}
+		<div class="container">
+			{{> StatisticsTemplate2}}
+		</div>
+
   </div>
   <div class="wrap_front_row3" style="background-color:#f5f5f5">
     <div class="container">
       <div class="row row_about row_front">
 
-        <div class="col-md-6 secure">
+        <div class="col-md-6 secure" style="margin-bottom:20px;">
           <h2> Bitchange is safe and secure </h2>
-          <p> We ensure that you trade safely and anonymously </P>
+          <p> We ensure that you trade safely and anonymously </p>
         </div>
 
         <div class="col-md-6 fast">
@@ -49,7 +26,7 @@
         <div class="col-md-6 trading" style="margin-bottom:20px;">
           <h2> Bitcoin Trading </h2>
           <p> New to trading with bitcoin? We will walk you through each step of
-          the process. </P>
+          the process. </p>
         </div>
 
         <div class="col-md-6 cheap">

@@ -1,12 +1,31 @@
 <template name="BuyOrderFeed">
   <div class="panel panel-default">
-    <div class="panel-heading text-center">Buy Orders </div>
+    <div class="panel-heading text-center">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					Amount
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					Buy Price
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					Total
+				</div>
+			</div>
+		</div>
 
       <ul class="list-group">
-
+				{{#if buyOrders}}
           {{#each buyOrders}}
             {{> buyOrder}}
           {{/each}}
+				{{else}}
+					<li style="cursor:pointer" id="sellOrderItem" class="list-group-item text-center">
+						<div class="row">
+							There are currently no orders
+						</div>
+					</li>
+				{{/if}}
       </ul>
 
   </div>
@@ -15,8 +34,20 @@
 
 
 <template name="buyOrder">
-  <li class="list-group-item text-center">
-    BTC: {{BTC}}
-    At: {{price}}
+  <li style="cursor:pointer" class="list-group-item text-center" id="buyOrderItem">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-4">
+				{{BTC}}<label class=""><span class="fa fa-btc"></span></label>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-4">
+				<a href="">{{price}}</a><label class=""><span class="fa fa-usd"></span></label>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-4">
+				{{USD}}<label class=""><span class="fa fa-usd"></span></label>
+				{{#if isUser}}
+					 <span class="glyphicon glyphicon-user pull-right"></span>
+				{{/if}}
+			</div>
+		</div>
   </li>
 </template>

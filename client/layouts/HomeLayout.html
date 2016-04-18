@@ -1,11 +1,10 @@
-<template name="mainLayout">
+<template name="HomeLayout">
 
-  <div class="navbar navbar-default custom_navbar2 custom_footer_darkblue" style="" role="navigation">
+  <div class="navbar navbar-default custom_navbar2 custom_footer_darkblue" style="max-height:526px" role="navigation">
       <div class="navbar-header">
           <a class="navbar-brand" style="padding:5px 15px;" href="/">
             <img class="header_logo" style="float:left" src="/img/Bit_White.png">
             <img class="header_logo" src="/img/Bitchange_white.png">
-
 
           </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,14 +27,41 @@
           </ul>
           {{/if}}
 
-          <ul class=" list-group nav navbar-nav navbar-right">
+          <ul class="list-group nav navbar-nav navbar-right">
 						{{#if currentUser}}
-               <li><a href="">BTC: {{currentUser.profile.wallet.BTC}}</a></li>
-               <li><a href="">USD: {{currentUser.profile.wallet.USD}}</a></li>
+							<li><a href="">BTC: {{currentUser.profile.wallet.BTC}}</a></li>
+							<li><a href="">USD: {{currentUser.profile.wallet.USD}}</a></li>
 						{{/if}}
-               {{> loginButtons}}
+							{{> loginButtons}}
           </ul>
       </div>
+
+
+      <div class="container " style="">
+        <div class="row row_about">
+            <div class="col-md-1 col-sm-0 col-xs-0">
+            </div>
+
+            <div class="col-md-5 col-sm-6 col-xs-12 col_centered">
+              <div class="row">
+                <div class="OrderForm">
+                  {{> allInOneBitcoinForm}}
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 hidden-xs col_centered statistics_template">
+              <h2 style="margin-top:0px;">Bitchange is a fast and secure way to exchange bitcoin</h2>
+              <h3>To get started open a free account or click the about button below
+                to learn more
+              </h3>
+                <button class="btn btn-primary">Sign up</button>
+                <button class="btn btn-info">Learn more</button>
+            </div>
+
+        </div>
+      </div>
+
   </div>
 
   {{> flashMessages}}

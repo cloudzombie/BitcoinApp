@@ -1,5 +1,7 @@
 .custom_footer_darkblue {
   background-color: #09548B;
+	background:url(http://worldwidepurewater.com/wp-content/uploads/2014/10/16847361.jpg);
+  /*background:url(https://www.coinbase.com/assets/home/bg-cbd6be93422d1c96fee1b638932bd072f76de72ab6a90996069fbbb4ebc0034b.jpg);*/
   border: 0px;
 }
 
@@ -17,14 +19,26 @@
 }
 
 .custom_navbar2 {
+/*  background-color: #f5f5f5;*/
+  background-color: #09548B;
+  background:url(http://worldwidepurewater.com/wp-content/uploads/2014/10/16847361.jpg);
+  border: 0px;
+}
+
+.custom_navbar3 {
   background-color: #f5f5f5;
   border: 0px;
 }
 
 .custom_navbar2 ul.nav.navbar-nav li a{
-  color: #09548B;
+  /*color: #09548B;*/
+  color:white;
 }
 
+.custom_navbar3 ul.nav.navbar-nav li a{
+  color: #09548B;
+
+}
 
 .footer,.push {
   height: 155px;

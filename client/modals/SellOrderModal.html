@@ -1,0 +1,27 @@
+<template name="SellOrderModal">
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center">Buy</h4>
+                </div>
+                
+                <div class="modal-body">
+                    <p class="text-left"> This Seller is selling {{data.BTC}} BTC at {{data.price}}$</p>
+										<p class="text-left">How much would you like to buy?</p>
+                    
+                    <form id="SellOrderModalForm">
+                        <div style="" class="form-group">
+                            <label for="btcAmount">BTC</label>
+                            <input id="btcAmount" name="btcAmount" value="" 
+																	 placeholder={{data.BTC}} type="number">
+                            
+                        </div>
+                        <button class="btn btn-primary">Buy</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

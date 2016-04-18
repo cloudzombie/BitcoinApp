@@ -1,47 +1,98 @@
 
 <template name="allInOneBitcoinForm">
   <div class="panel panel-default">
-    <div class="panel-heading text-center" style="color:#09548Bno">Trade </div>
+    <div class="panel-heading text-left" style="color:#09548Bno">
+			<div class="row">
+				{{toggleButton}}
+				{{#if button_sm}}
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+						<input id="buy-sell-select" type="checkbox" data-toggle="toggle" data-on="Buy" data-off="Sell" data-size="small">
+					</div>
+				{{else}}
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+						<input id="buy-sell-select" type="checkbox" data-toggle="toggle" data-on="Buy" data-off="Sell">
+					</div>
+				{{/if}}
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+					<span class="fa fa-exchange fa-2x"></span>
+				</div>
+				{{#if button_sm}}
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-right">
+						<input id="currency_type" type="checkbox" data-toggle="toggle" data-on="CZK" data-off="USD" data-size="small">
+					</div>
+				{{else}}
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-right">
+						<input id="currency_type" type="checkbox" data-toggle="toggle" data-on="CZK" data-off="USD">
+					</div>
+				{{/if}}
+			</div>
+		</div>
 
     <div class="panel-body">
       <form class="form-horizontal row-border" id="allInOneBitcoinForm">
-        <div class="form-group">
-          <label class="col-sm-3 control-label" for="userChoice">buy/sell</label>
-
-            <select id="buy-sell-select" class="col-sm-5 selectpicker">
-              <option>Buy</option>
-              <option>Sell</option>
+				<!--
+        <div class="form-group" style="white-space:nowrap">
+          <label class="col-sm-3 control-label" for="userChoice">I want to</label>
+						
+					<select id="buy-sell-select" class="col-sm-4 selectpicker">
+						<option>Buy</option>
+						<option>Sell</option>
+					</select>
+					
+        </div>
+				-->
+				
+				
+        <div class="form-group has-feedback" style="white-space:nowrap">
+					<div class="row">
+						<label class="col-md-4 col-sm-4 col-xs-4 control-label" for="amountBTC">BTC:  </label>
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<input class="form-control required" type="number" name="amountBTC" step="any" id=amountBTC value={{amountBTC}} placeholder="BTC Amount">
+							<span class="form-control-feedback">
+								<i class="fa fa-btc fa-lg "></i>
+							</span>
+						</div>
+					</div>
+					<!--
+					<select id="currency_type" class="col-sm-5 selectpicker">
+              <option value="$">BTC/USD</option>
+              <option value="K&#269;">BTC/CZK</option>
             </select>
-        </div>
-
-        <div class="form-group">
-          <label class="col-sm-3 control-label" for="amountCurrency">Amount:  </label>
-          <div class="col-sm-5">
-            <input class="form-control required" type="number" name="amountBTC" step="any" id=amountBTC value={{amountBTC}} placeholder={{amountBTC}}>
-          </div>
+						<span class="fa fa-btc fa-2x"></span> -->
         </div>
         <div class="form-group">
 
-            <!-- Single button -->
+        <!--    
           <label class="col-sm-3 control-label" for="userChoice">Currency</label>
 
             <select id="currency_type" class="col-sm-5 selectpicker">
               <option value="$">USD</option>
               <option value="K&#269;">CZK</option>
             </select>
+				-->
+        </div>
+        <div class="form-group has-feedback" style="white-space:nowrap">
+					<div class="row">
+						<label class="col-md-4 col-sm-4 col-xs-4 control-label"><span class="fa fa-btc fa-lg"> = </span></label>
 
+						<div class=" col-md-4 col-sm-4 col-xs-4">
+							<input class="form-control required" type="number" name="amountCurrency" step="any" id=amountCurrency value={{amountCurrency}} placeholder={{amountCurrency}}>
+							<span class="form-control-feedback">
+									<i class=" ">{{currencyType}}</i>
+								</span>
+						</div>
+					</div>
+					<!--
+					<span class="fa fa-usd fa-2x"></span>
+					<span style="font-size:2em;padding-left:15px">&#x4b;&#x10d;</span>
+					-->
         </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Price: </label>
-          <div class="col-sm-5">
-            <input class="form-control required" type="number" name="amountCurrency" step="any" id=amountCurrency value={{amountCurrency}} placeholder={{amountCurrency}}>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Total: </label>
-          <div class="col-sm-5">
-            <p class="form-control-static">{{Totalcurrency}} {{currencyType}}</p>
-          </div>
+        <div class="form-group" style="white-space:nowrap">
+         <!-- <label class="col-sm-3 control-label">Total: </label> -->
+					
+        
+            <p class="form-control-static text-center">You are {{formType}} {{amountBTC}} BTC for {{amountCurrency}} {{currencyType}}</p>
+						<p class="form-control-static text-center">	Total: {{Totalcurrency}} {{currencyType}}</p>
         </div>
         <button type="submit" class="btn btn-primary">Trade</button>
       </form>

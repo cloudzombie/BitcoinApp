@@ -1,45 +1,39 @@
 <template name="StatisticsTemplate2">
   <div class="row row_statistics_1">
     <h2 class="text-center" style="margin-bottom:20px"> Currently on Bitchange  </h2>
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-6">
-              <p> Most recent: {{currentStats.latestPrice}}$ </p>
+		<div class="col-md-2 hidden-sm" ></div>
+		<!--<div class="col-md-6 col-sm-12 col-xs-12">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="white-space:nowrap">
+					<p> Most recent: {{currentStats.latestPrice}}$ </p>
 
-            </div>
-            <div class="col-md-6">
-              <p> Todays high: {{currentStats.todaysHigh}}$</p>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="white-space:nowrap">
+					<p> Todays high: {{currentStats.todaysHigh}}$</p>
 
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6" style="white-space:nowrap">
-              <p style="float:left"> Weekly high: {{currentStats.weeksHigh}}$ </p>
-              <!--<span class="glyphicon glyphicon-menu-up" style="color:green"></span></p>-->
-            </div>
-            <div class="col-md-6">
-              <p> Weekly average: {{currentStats.weeksAverage}}$ </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-6">
-              {{> BuyOrderFeed}}
-            </div>
-            <div class="col-md-6">
-              {{> SellOrderFeed}}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-    </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="white-space:nowrap">
+					<p style="float:left"> Weekly high: {{currentStats.weeksHigh}}$ </p>
+					--><!--<span class="glyphicon glyphicon-menu-up" style="color:green"></span></p>-->
+		<!--		</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="white-space:nowrap">
+					<p> Weekly average: {{currentStats.weeksAverage}}$ </p>
+				</div>
+			</div>
+		</div> -->
+		<div class="col-md-8 col-sm-12 col-xs-12">
+			<div class="row">
 
-  </div>
+				<div class="col-sm-6">
+					{{> BuyOrderFeed}}
+				</div>
+				<div class="col-sm-6">
+					{{> SellOrderFeed}}
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2 hidden-sm" ></div>
+   </div>
 </template>

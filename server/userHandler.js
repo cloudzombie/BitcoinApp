@@ -9,7 +9,6 @@ Accounts.onCreateUser(function (options, user) {
     user.profile = options.profile
 
   }
-  //Router.go('/profile' + user.username);
-  console.log("CREATED USER", user);
+  
   return user;
 });

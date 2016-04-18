@@ -1,0 +1,28 @@
+<template name="DeleteBuyOrderModal">
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center">Delete Item?</h4>
+                </div>
+                
+                <div class="modal-body">
+                    <p class="text-center"> This is your order. Delete it?</p>
+                    
+                    <form id="DeleteBuyOrderModalForm" novalidate>
+                        <div style="display:none" class="form-group">
+                            <label for="btcAmount">BTC</label>
+                            <input id="btcAmount" name="btcAmount" value="{{data.BTC}}" placeholder="{{data.BTC}}" type="number">
+                            
+                        </div>
+                        <button id="deleteItem" class="btn btn-danger">Delete</button>
+                        <button id="cancel_button" class="btn btn-info">Cancel</button>
+                    </form>
+										
+                </div>
+								
+            </div>
+        </div>
+    </div>
+
+</template>

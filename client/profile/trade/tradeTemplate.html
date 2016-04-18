@@ -11,17 +11,31 @@
             {{> allInOneBitcoinForm}}
           </div>
           <div class="col-xs-6 col-md-4 prof_col">
-            <div class="panel panel-default">
-              <div class="panel-heading text-center">My Wallet </div>
-              <ul class="list-group clearfix">
-                <li class="list-group-item"> My BTC: {{BTC}} </li>
-                <li class="list-group-item"> Available money: {{USD}} </li>
-                <li class="list-group-item"> <button class="btn btn-primary pull-right">Deposit </button></li>
-              </ul>
-            </div>
-            <div class="row">
-              <h3 class="text-center">  </h3>
-            </div>
+						<div class="nav navbar navbar-default">
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav">
+									<li class="active" id="TradeTab"><a href="" style="color:#333">Trade</a></li>
+									<li id="AvailableTab"><a href="" style="color:#333">Available Orders</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="container text-center col-xs-12" id="TradeTabExplain">
+								<p>
+									To start trading simply use the panel to the left.
+									Click to the button on the top left to choose whether you want to buy or sell
+									Some other explanations
+								</p>
+							</div>
+							<div id="AvailableOrders">
+								<div class="col-xs-12">
+									{{> BuyOrderFeed}}
+								</div>
+								<div class="col-xs-12">
+									{{> SellOrderFeed}}
+								</div>
+							</div>
+						</div>
 
           <!--  <canvas id="tradeChart" width="400" height="400"></canvas>-->
           </div>
@@ -29,7 +43,7 @@
           </div>
 
         </div>
-        <div class="row" style="padding:5px">
+    <!--    <div class="row" style="padding:5px">
           <div class="col-md-2">
           </div>
           <div class="col-md-8">
@@ -61,12 +75,12 @@
           </div>
           <div class="col-md-2">
           </div>
-        </div>
-        <div class="row">
+        </div>-->
+        <div class="row" style="margin-bottom:155px">
           <div class="col-md-2">
           </div>
           <div class="col-md-8">
-            <h3 class="text-center">Trade History </h3>
+            <h3 class="text-center" style="color:#09548B">Trade History </h3>
             {{> HistoryFeedTemplate}}
           </div>
           <div class="col-md-2">

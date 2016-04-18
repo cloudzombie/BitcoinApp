@@ -11,9 +11,12 @@ Template.TradeTemplate.helpers({
 
 
 Template.TradeTemplate.onRendered(function (){
+	
+	$("#TradeTabExplain").show();
+	$("#AvailableOrders").hide();
 
   // code for creating a weekly line chart
-  var ctx = document.getElementById("tradeChart").getContext("2d");
+  /*var ctx = document.getElementById("tradeChart").getContext("2d");
 
   var data = {
     labels: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -77,5 +80,23 @@ Template.TradeTemplate.onRendered(function (){
     //legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
 
 };
-  var lineChart = new Chart(ctx).Line(data,options);
+  var lineChart = new Chart(ctx).Line(data,options);*/
 });
+
+
+Template.TradeTemplate.events({
+	'click #AvailableTab':function(event,template){
+		$("#TradeTab").toggleClass("active","");
+		$("#AvailableTab").toggleClass("active");
+		$("#AvailableOrders").show();
+		$("#TradeTabExplain").hide();
+	},
+	
+	'click #TradeTab':function(event,template){
+		$("#AvailableTab").toggleClass("active","");
+		$("#TradeTab").toggleClass("active");
+		$("#TradeTabExplain").show();
+		$("#AvailableOrders").hide();
+	}
+	
+})

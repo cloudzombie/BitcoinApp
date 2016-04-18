@@ -1,2 +1,13 @@
  -- Add messages informing user about trades that get completed.
  -- Create signup form
+
+
+ New history structure
+
+ - Status
+ - Type
+ - BTC
+ - Price
+ - Total
+ - Time
+ - cancel button
