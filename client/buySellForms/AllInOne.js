@@ -199,13 +199,17 @@ Template.allInOneBitcoinForm.events({
 				if(checked){
 					buyOsell = "Buy"
 				}
-        if(buyOsell === "Buy"){
+				// 4/16/16 change from Buy/Sell Orders to Only BuyOrder
+				
+				if(buyOsell === "Buy"){
           if(currUSD > totBuy){
             BuyOrderCollection.insert({username:username,
               BTC:parseFloat(BTCtoBuy),
               price:parseFloat(currBuy),
               USD: parseFloat(totBuy),
-              time:currentTime});
+							status:"Trading",
+              time:currentTime,
+							type:"buy"});
           }else{
             alert("Need more money");
           }
@@ -216,7 +220,9 @@ Template.allInOneBitcoinForm.events({
                 BTC:parseFloat(BTCtoBuy),
                 price:parseFloat(currBuy),
                 USD: parseFloat(totBuy),
-                time:currentTime});
+								trading:"Trading",
+                time:currentTime,
+								type:"sell"});
               }else{
                 alert("Need more BTC. Please purchase more BTC");
               }

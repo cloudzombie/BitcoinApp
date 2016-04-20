@@ -1,0 +1,38 @@
+<template name="UserOrderFeed">
+   <div class="row">
+			<div class="">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th>Status</th>
+							<th>BTC</th>
+							<th>Price</th>
+							<th>Total</th>
+							<th>Time </th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each userOrders}}
+
+							{{> UserOrder}}
+
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+</template>
+
+
+<template name="UserOrder">
+  <tr>
+    <td>{{type}}</td>
+    <td>{{status}}</td>
+    <td>{{BTC}}</td>
+    <td>{{Price}}</td>
+    <td>{{Total}}</td>
+    <td>{{timeFormatted}}</td>
+  </tr>
+</template>

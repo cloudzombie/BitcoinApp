@@ -1,7 +1,7 @@
 Template.SellOrderFeed.helpers({
 
   sellOrders: function(){
-    let orders =  SellOrderCollection.find({},{sort:{time:-1}},{limit:8}).fetch();
+    let orders =  SellOrderCollection.find({status:{$ne:"completed"}},{sort:{time:-1}},{limit:8}).fetch();
 		if(orders.length == 0){
 			return null;
 		}else{

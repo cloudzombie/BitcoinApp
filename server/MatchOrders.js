@@ -22,8 +22,7 @@ Meteor.methods({
     // the list.
     if(newBuyOrder)
     {
-      console.log("buy order");
-      console.log(newBuyOrder[0]);
+      
       var CurrentBuyOrder = newBuyOrder;
       var requestedBTC = CurrentBuyOrder.BTC;
       var price = CurrentBuyOrder.price;
@@ -31,16 +30,14 @@ Meteor.methods({
       var sellORderMatch = SellOrderCollection.find({price:{$lte:price},username:{$ne:CurrentBuyOrder.username}},
          {sort:{time:-1}});
 
-      console.log(price);
-      console.log("sellORderMatch");
-      console.log(sellORderMatch.fetch()[0]);
+    
       var leftToBuyBTC = requestedBTC;
       // TODO figure out which way is less expensive
       // Use foreach or just call each time inside while loop
       while(leftToBuyBTC > 0){
-        console.log("sellORderMatch in loop");
+       
         var currentMatch = sellORderMatch.fetch()[0];
-        console.log(currentMatch);
+       
         if(currentMatch){
           var currentBTc = currentMatch.BTC
           var amountBought = (leftToBuyBTC - currentBTc) > 0 ? (leftToBuyBTC - currentBTc): leftToBuyBTC;
@@ -51,20 +48,23 @@ Meteor.methods({
           // if the user that sold the BTC has sold all of their BTC then
           // remove them from the sell order list
           if(amountBought >= currentBTc){
-            SellOrderCollection.remove({_id:currentMatch._id});
+						// 4/17/16 change from remove to update status to completed
+            // SellOrderCollection.remove({_id:currentMatch._id});
+						SellOrderCollection.update({_id:currentMatch._id},{$set:{status:"completed"}});
           }else{
             SellOrderCollection.update({_id:currentMatch._id},{$set:
               {BTC:amountSellerLeft}});
           }
           leftToBuyBTC -= amountBought;
           //Now update the BuyOrder
-          console.log(leftToBuyBTC);
-          console.log(CurrentBuyOrder);
+          
           if(leftToBuyBTC > 0){
             BuyOrderCollection.update({_id:CurrentBuyOrder._id},{$set:
               {BTC:leftToBuyBTC}});
           }else{
-            BuyOrderCollection.remove({_id:CurrentBuyOrder._id});
+						// 4/17/16 change from remove to update status to completed
+            //BuyOrderCollection.remove({_id:CurrentBuyOrder._id});
+						BuyOrderCollection.update({_id:CurrentBuyOrder._id},{$set:{status:"completed"}});
 
           }
           // BOTH BUYER and SELLER use the same following variables
@@ -95,7 +95,11 @@ Meteor.methods({
           var time = Date.now();
 
           var timeFormatted = moment(time).format('MMMM Do YYYY, h:mm:ss a');
-          HistoryOrderCollection.insert({"buyer":buyer,"seller":seller,"BTC":amountBought,"Price":price,"Total":updatedUSD,"timeFormatted":timeFormatted,"time":time});
+					// Add buy/sell order ids to history collection in order to be able to look at the history of a 
+					// Specific order
+          HistoryOrderCollection.insert({"buyer":buyer,"seller":seller,"BTC":amountBought,
+																				 "Price":price,"Total":updatedUSD,"timeFormatted":timeFormatted,"time":time,
+																				"BuyOrderID":CurrentBuyOrder._id,"SellOrderID":currentMatch._id});
 
 
         }else{

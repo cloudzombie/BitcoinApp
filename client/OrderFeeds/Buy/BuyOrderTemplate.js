@@ -1,7 +1,7 @@
 Template.BuyOrderFeed.helpers({
 
   buyOrders: function(){
-		let orders = BuyOrderCollection.find({},{sort:{time:-1}},{limit:8}).fetch();
+		let orders = BuyOrderCollection.find({status:{$ne:"completed"}},{sort:{time:-1}},{limit:8}).fetch();
 		
 		if(orders.length == 0){
 			return null;
