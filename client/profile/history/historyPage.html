@@ -1,14 +1,35 @@
-<template name="HistoryPage">
+<template name="OrderHistory">
   <div class="container">
     <div>
       <div class="row" style="padding:5px">
-        <p class="text-center">Welcome {{currentUser.username}}</p>
+				{{#with order}}
+        	<p class="text-center">History for {{_id}} Issued on {{timeformatted}}</p>
+				{{/with}}
       </div>
       <div class="row" style="padding:5px">
         <div class="" style="">
-          {{> HistoryFeedTemplate}}
+          <table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Type</th>
+								<th>Status</th>
+								<th>BTC</th>
+								<th>Price</th>
+								<th>Total</th>
+								<th>Date Issued </th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each orderHistory}}
+
+								{{> history}}
+
+							{{/each}}
+						</tbody>
+					</table>
         </div>
       </div>
     </div>
   </div>
 </template>
+

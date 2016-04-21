@@ -79,10 +79,22 @@
         <div class="row" style="margin-bottom:155px">
           <div class="col-md-2">
           </div>
-          <div class="col-md-8">
-            <h3 class="text-center" style="color:#09548B">My Orders </h3>
-            {{> HistoryFeedTemplate}}
-          </div>
+					<div clss="col-md-8">
+						<div class="nav navbar navbar-default">
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav">
+									<li class="active" id="MyTrades"><a href="" style="color:#333">My Trades</a></li>
+									<li id="FullHistory"><a href="" style="color:#333">My Full History</a></li>
+								</ul>
+							</div>
+						</div>
+						<div id="UserOrderFeed">
+							{{> UserOrderFeed}}
+						</div>
+						<div id="UserHistoryFeed">
+							{{> HistoryFeedTemplate}}
+						</div>
+					</div>
           <div class="col-md-2">
           </div>
         </div>

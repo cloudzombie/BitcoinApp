@@ -200,6 +200,7 @@ Template.allInOneBitcoinForm.events({
 					buyOsell = "Buy"
 				}
 				// 4/16/16 change from Buy/Sell Orders to Only BuyOrder
+				var timeFormatted = moment(currentTime).format('MMMM Do YYYY, h:mm:ss a');
 				
 				if(buyOsell === "Buy"){
           if(currUSD > totBuy){
@@ -209,6 +210,7 @@ Template.allInOneBitcoinForm.events({
               USD: parseFloat(totBuy),
 							status:"Trading",
               time:currentTime,
+							timeformatted:timeFormatted,
 							type:"buy"});
           }else{
             alert("Need more money");
@@ -220,7 +222,8 @@ Template.allInOneBitcoinForm.events({
                 BTC:parseFloat(BTCtoBuy),
                 price:parseFloat(currBuy),
                 USD: parseFloat(totBuy),
-								trading:"Trading",
+								status:"Trading",
+								timeformatted:timeFormatted,
                 time:currentTime,
 								type:"sell"});
               }else{

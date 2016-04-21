@@ -14,6 +14,9 @@ Template.TradeTemplate.onRendered(function (){
 	
 	$("#TradeTabExplain").show();
 	$("#AvailableOrders").hide();
+	
+	$("#UserHistoryFeed").hide();
+	$("#UserOrderFeed").show();
 
   // code for creating a weekly line chart
   /*var ctx = document.getElementById("tradeChart").getContext("2d");
@@ -97,6 +100,20 @@ Template.TradeTemplate.events({
 		$("#TradeTab").toggleClass("active");
 		$("#TradeTabExplain").show();
 		$("#AvailableOrders").hide();
+	},
+	
+	'click #FullHistory':function(event,template){
+		$("#MyTrades").toggleClass("active","");
+		$("#FullHistory").toggleClass("active");
+		$("#UserHistoryFeed").show();
+		$("#UserOrderFeed").hide();
+	},
+	
+	'click #MyTrades':function(event,template){
+		$("#FullHistory").toggleClass("active","");
+		$("#MyTrades").toggleClass("active");
+		$("#UserHistoryFeed").hide();
+		$("#UserOrderFeed").show();
 	}
 	
 })
